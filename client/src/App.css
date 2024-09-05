@@ -1,0 +1,38 @@
+/* Container for the layout */
+.container {
+  display: grid;
+  grid-template-columns: 240px 1fr; /* Sidebar takes 240px, content takes remaining space */
+  height: 100vh; /* Full viewport height */
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #330867; /* Example background color */
+  color: white; /* Text color */
+}
+
+/* Content area (Header + main content) */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content styles */
+.main-content {
+  padding: 16px;
+}
+
+/* Responsive design: Stack sidebar and content on smaller screens */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Sidebar and content take full width */
+  }
+
+  .sidebar {
+    grid-row: 1; /* Sidebar appears on top */
+  }
+
+  .content {
+    grid-row: 2; /* Content appears below the sidebar */
+  }
+}
